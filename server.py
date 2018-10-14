@@ -4,36 +4,36 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    pass
+    return render_template("welcome.html")
 
 @app.route('/details')
 def get_details():
-	pass
+	return render_template("details.html")
 
 app.route('/accommodations')
 def get_accomodations():
-	pass
+	return render_template("accommodations.html")
 
 @app.route('/story')
 def get_story():
-	pass
+	return render_template("story.html")
 
 @app.route('/photos')
 def view_photos():
-	pass
+	return render_template("photos.html")
 
 
 @app.route('/registry')
 def buy_buy_buy():
-	pass
+	return render_template("registry.html")
 
 @app.route('/rsvp')
 def rsvp():
-	pass
+	return render_template("rsvp.html")
 
 @app.route('/message_board')
 def view_message_board():
-	pass
+	return render_template("messageboard")
 
 
 if __name__ == '__main__':
