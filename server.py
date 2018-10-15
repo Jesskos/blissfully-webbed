@@ -33,7 +33,7 @@ def rsvp():
 
 @app.route('/message_board')
 def view_message_board():
-	return render_template("messageboard")
+	return render_template("messageboard.html")
 
 
 if __name__ == '__main__':
