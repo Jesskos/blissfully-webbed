@@ -10,9 +10,9 @@ def welcome():
 def get_details():
 	return render_template("details.html")
 
-app.route('/accommodations')
+@app.route('/hotels')
 def get_accomodations():
-	return render_template("accommodations.html")
+	return render_template("hotels.html")
 
 @app.route('/story')
 def get_story():
