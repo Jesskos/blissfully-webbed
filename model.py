@@ -10,5 +10,10 @@ class User(db.Model):
 	user_first_name = db.Column(db.String(40), nullable=False)
 	user_last_name = db.Column(db.String(40), nullable=False)
 	user_last_name = db.Column(db.String(50), nullable=False)
-	user_type = db.Column(db.Integer, nullable=False)
+	user_type = db.Column(db.Integer, nullable=True)
+
+
+
+
+
 
