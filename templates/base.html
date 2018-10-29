@@ -1,36 +1,44 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title>{% block title %} Base {% endblock %}</title>
+	<link href="https://fonts.googleapis.com/css?family=Bentham|Grand+Hotel|Shadows+Into+Light" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
 	
 </head>
+  <body background="http://localhost:5000/static/images/heartsand.jpg">
+<!--     <div class="container">
+	  <img class="item1 shells" src="http://localhost:5000/static/images/shells.jpg" alt="shells">
+    </div> -->
+	<div class="container">
+	  <ul> 
+	  	<center><h1>Brooke and Aaron</h1></center>
+	  	<li class="item"><a href="/">Home</a></li>
+	  	<li class="dropdown item">
+	  		<a class="dropbtn">About Us</a>
+	  		<div class="dropdown-content">
+	  			<a href="/story">Our story</a>
+	  			<a href="/photos">Photos</a>
+	  		</div>
+	  	</li> 
+	  	<li class="dropdown item">
+	  		<a class="dropbtn">Details</a>
+	  		<div class="dropdown-content">
+	  			<a href="/details">Itinerary</a>
+	  			<a href="/events">Events</a>
+	  		</div>
+	  	</li>
+	  	<li class="item"><a href="/hotels">Accommodations</a></li>
+	  	<li class="item"><a href="/registry">Registry</a></li>
+	  	<li class="item"><a href="/rsvp">RSVP</a></li>
+	<!--   	<li class="signup"><a href="#">MyBaron</a></lI>
+	  	<li class="signup"><a href="#">Create an Account</a></li> -->
+	  </ul>
+	</div>
 
 
-  <ul> 
-  	<li><h3 style='color:yellow'>Brooke and Aaron</h3></li>
-  	<li><a href="/">Home</a></li>
-  	<li class="dropdown">
-  		<a class="dropbtn">About Us</a>
-  		<div class="dropdown-content">
-  			<a href="/story">Our story</a>
-  			<a href="/photos">Photos</a>
-  		</div>
-  	</li> 
-  	<li class="dropdown">
-  		<a class="dropbtn">Details</a>
-  		<div class="dropdown-content">
-  			<a href="/details">Itinerary</a>
-  			<a href="/events">Events</a>
-  		</div>
-  	</li>
-  	<li><a href="/hotels">Accommodations</a></li>
-  	<li><a href="/registry">Registry</a></li>
-  	<li><a href="/rsvp">RSVP</a></li>
-  	<li class="signup"><a href="#">MyBaron</a></lI>
-  	<li class="signup"><a href="#">Create an Account</a></li>
-  <ul>
 
 
-  {% block content %} Base {% endblock %}
+	  {% block content %} Base {% endblock %}
 </body>
 </html>

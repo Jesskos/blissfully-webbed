@@ -4,23 +4,30 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+
 }
 
 li {
     float: left;
+    font-family: 'Bentham', serif;
+}
+
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    color: #7E1946;
 }
 
 li a, .dropbtn {
     display: inline-block;
-    color: white;
+    color: #7E1946;
+    font-weight: bold;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    color: red;
 }
 
 li.dropdown {
@@ -46,10 +53,51 @@ li.dropdown {
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {  
     display: block;
 }
 
 .signup {
     float: right;
 }
+
+
+
+.container {
+  display: flex; 
+  align-items: stretch;
+  justify-content: center;
+
+
+}
+
+.container-left {
+    justify-content: flex-start;
+    padding-left: 15%;
+    padding-top: 5%;
+}
+
+.item {
+    flex-grow: 1;
+}
+
+.item1 {
+
+}
+
+img.main {
+    width: auto;
+    height: 600px;
+    max-height: 600px;
+    
+}
+
+body {
+  background-image: url(http://localhost:5000/static/images/heartsand.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
