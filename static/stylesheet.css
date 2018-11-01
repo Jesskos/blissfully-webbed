@@ -74,11 +74,16 @@ li.dropdown {
 
 }
 
+
+
 .container-left {
+    display: flex;
     justify-content: flex-start;
-    flex-direction: row;
     padding-left: 15%;
-    padding-top: 8%;
+}
+
+.item-main {
+    flex-grow: 0;
 }
 
 .nav-item {
@@ -102,6 +107,7 @@ img.main {
     border-style: double;
     border-width: 10px;    
     border-color: #7E1946;
+    margin-top: 4%;
 
 }
 
@@ -120,7 +126,29 @@ body {
 }
 
 .annoucement {
-    width: 100px;
-    height: 50px;
-    background-color: white;
+    width: 300px;
+    height: 100px;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+    margin-left:auto;
+    margin-right:auto;
+  
+}
+
+.days-remaining {
+    margin-top: 200px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 140px;
+
+}
+
+
+.seahorses {
+    width: 80px;
+    height: auto;
+    padding-left: 150px;
+    margin-right: auto;
+    margin-left: auto;
+
 }
