@@ -2,6 +2,14 @@ from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
+@app.route('/login')
+def log_in():
+	return render_template("login.html")
+
+@app.route('/signup')
+def log_in():
+	return render_template("signup.html")
+
 @app.route('/')
 def welcome():
     return render_template("welcome.html")

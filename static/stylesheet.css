@@ -1,3 +1,17 @@
+/*body */
+
+body {
+  background-image: url(http://localhost:5000/static/images/heartsand.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+
+/*
+navbar CSS*/
 
 ul {
     list-style-type: none;
@@ -61,7 +75,8 @@ li.dropdown {
     float: right;
 }
 
-
+/*
+containers */
 
 .container {
   display: flex; 
@@ -72,8 +87,8 @@ li.dropdown {
   filter: alpha(opacity=60); 
 
 
-}
 
+}
 
 
 .container-left {
@@ -82,6 +97,16 @@ li.dropdown {
     padding-left: 15%;
 }
 
+.buttons {
+    display: flex; 
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+
+
+/*items in containers */
 .item-main {
     flex-grow: 0;
 }
@@ -111,14 +136,6 @@ img.main {
 
 }
 
-body {
-  background-image: url(http://localhost:5000/static/images/heartsand.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
-}
 
 .title-seashell {
     height: 50px;
@@ -139,7 +156,7 @@ body {
     margin-top: 200px;
     margin-left:auto;
     margin-right:auto;
-    padding-left: 140px;
+    padding-left: 150px;
 
 }
 
@@ -150,5 +167,63 @@ body {
     padding-left: 150px;
     margin-right: auto;
     margin-left: auto;
+
+}
+
+
+.log-in-button {
+    background-color: #7ADFBB; 
+    border: 2px solid #7E1946;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    margin: 15px;
+    font-family: 'Shadows Into Light', cursive;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 35px;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.rsvp-button {
+    background-color: #7ADFBB; 
+    border: 2px solid #7E1946;
+    text-align: center;
+    color: black; 
+    width: 140px;
+    height: 60px;
+    margin: 15px;
+    font-family: 'Shadows Into Light', cursive;
+    text-decoration: none;
+    color: black;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+
+.sign-up-button {
+    background-color: #7ADFBB; 
+    border: 2px solid #7E1946;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    margin: 15px;
+    font-family: 'Shadows Into Light', cursive;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    display: inline-block;
+    line-height: 35px;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
 
 }
