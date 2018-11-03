@@ -7,7 +7,7 @@ def log_in():
 	return render_template("login.html")
 
 @app.route('/signup')
-def log_in():
+def sign_up():
 	return render_template("signup.html")
 
 @app.route('/')
@@ -43,6 +43,9 @@ def rsvp():
 def view_message_board():
 	return render_template("messageboard.html")
 
+@app.route('/rsvp_response')
+def rsvp_response():
+	pass
 
 if __name__ == '__main__':
 	app.run()
