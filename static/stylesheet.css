@@ -1,7 +1,7 @@
 /*body */
 
 body {
-  background-image: url(http://localhost:5000/static/images/heartsand.jpg);
+  background-image: url(http://localhost:5000/static/images/monkey.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -23,17 +23,20 @@ ul {
 
 li {
     float: left;
+    color: black;
+    font-size: 36px;
     
 }
 
 h1 {
     font-family: 'Shadows Into Light', cursive;
-    color: #7E1946;
+    color: black;
+/*    color: #7E1946;*/
 }
 
 li a, .dropbtn {
     display: inline-block;
-    color: #7E1946;
+/*    color: #7E1946;*/
     font-weight: bold;
     text-align: center;
     padding: 14px 16px;
@@ -82,7 +85,7 @@ containers */
   display: flex; 
   align-items: stretch;
   justify-content: center;
-  background-color: #7ADFBB;
+  background-color: white;
   opacity: 0.6;
   filter: alpha(opacity=60); 
 
@@ -96,6 +99,15 @@ containers */
     justify-content: flex-start;
     padding-left: 15%;
 }
+
+.container-rsvp {
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;
+  justify-content: center;
+
+}
+
 
 .buttons {
     display: flex; 
@@ -120,27 +132,17 @@ containers */
 .sub-item {
     font-size: 18px;
     font-family: 'Bentham', serif;
-    color: #7E1946;
+/*    color: #7E1946;*/
 }
 
-
-img.main {
-    width: auto;
-    height: 500px;
-    max-height: 600px;
-    border-radius: 8px;
-    border-style: double;
-    border-width: 10px;    
-    border-color: #7E1946;
-    margin-top: 4%;
-
-}
 
 
 .title-seashell {
     height: 50px;
     width: auto;
 }
+
+
 
 .annoucement {
     width: 300px;
@@ -171,59 +173,3 @@ img.main {
 }
 
 
-.log-in-button {
-    background-color: #7ADFBB; 
-    border: 2px solid #7E1946;
-    text-align: center;
-    width: 80px;
-    height: 40px;
-    margin: 15px;
-    font-family: 'Shadows Into Light', cursive;
-    text-decoration: none;
-    color: black;
-    border-radius: 8px;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 35px;
-    margin-top: 20px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.rsvp-button {
-    background-color: #7ADFBB; 
-    border: 2px solid #7E1946;
-    text-align: center;
-    color: black; 
-    width: 140px;
-    height: 60px;
-    margin: 15px;
-    font-family: 'Shadows Into Light', cursive;
-    text-decoration: none;
-    color: black;
-    border-radius: 50%;
-    display: inline-block;
-    line-height: 50px;
-    font-size: 25px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-
-}
-
-.sign-up-button {
-    background-color: #7ADFBB; 
-    border: 2px solid #7E1946;
-    text-align: center;
-    width: 80px;
-    height: 40px;
-    margin: 15px;
-    font-family: 'Shadows Into Light', cursive;
-    text-decoration: none;
-    color: black;
-    border-radius: 8px;
-    display: inline-block;
-    line-height: 35px;
-    margin-top: 20px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    }
-
-}
