@@ -1,6 +1,6 @@
 /*body */
 
-body {
+.welcome-bg {
   background-image: url(http://localhost:5000/static/images/monkey.jpg);
   background-position: center center;
   background-repeat: no-repeat;

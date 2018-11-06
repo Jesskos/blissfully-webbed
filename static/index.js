@@ -5,4 +5,4 @@ function submitRSVP(evt) {
 }
 
 
-$(".saveForm").on("submit", submitRSVP)
+$(".rsvp-form").on("submit", submitRSVP)
