@@ -43,21 +43,23 @@ def rsvp():
 def view_message_board():
 	return render_template("messageboard.html")
 
-@app.route('/rsvp_response')
+@app.route('/rsvp_response', methods=["POST")
 def rsvp_response():
 	first_name = request.form.get("first")
 	last_name = request.form.get("last")
-	rsvp? = request.form.get("rsvp")
+	rsvp_response = request.form.get("rsvp")
 	phone_number = request.form.get("phone")
 	email = request.form.get("email")
 	other_guests = request.form.get("others")
 
 	print first_name
 	print last_name
-	print rsvp?
+	print rsvp_response
 	print phone_number
 	print email
 	print other_guests
+
+	return "added!"
 
 
 
