@@ -4,16 +4,23 @@
 
 {% block content %}
 
+
+<body class="rsvp-bg">  
+  </body>
+ 
 <div class="container-rsvp">
   <h3> Let us know if you can make it. We hope to "sea" you!</h3>
-  <form action="/rsvp_response"class="rsvp-form" method="post">
-  	First Name: <input type="text" name="fname"><br>
-  	Last Name: <input type="text" name="lname"><br>
-    Are you attending? <input type="radio" name="rsvp" value="yes"> Yes
+  <form action="/rsvp_response" class="rsvp-form" method="post">
+  	First Name: <input type="text" name="fname" id="first-name"><br>
+  	Last Name: <input type="text" name="lname" id="last-name"><br>
+    Are you attending? 
+    <input type="radio" name="rsvp" value="yes"> Yes
     <input type="radio" name="rsvp" value="no"> No <br>
-     What is your email address? <input type="text" name="email"> <br>
+     What is your phone number? <input type="text" name="phone" placeholder="optional"> <br>
+     What is your email address? <input type="text" name="email" placeholder="optional"> <br>
      How many others (not including yourself) are you rsvping for? 
-     <select>
+     <select id="other-rsvps">
+      <option value="0">0</option>
   		<option value="1">1</option>
   		<option value="2">2</option>
   		<option value="3">3</option>
@@ -24,11 +31,11 @@
   		<option value="8">8</option> 
   		<option value="9">9</option> 
   		<option value="10">10</option> 
-	 </select>
-	 <br>
+	  </select>
+	  <br>
     <input type="submit" value="Submit">
   </form>
 
-
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="/static/index.js"></script>
 {% endblock %}     
