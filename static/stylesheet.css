@@ -9,6 +9,14 @@
   background-color: #464646;
 }
 
+.rsvp-bg{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #ADD8E6;
+}
+
 
 /*
 navbar CSS*/

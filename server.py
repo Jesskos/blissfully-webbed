@@ -45,7 +45,23 @@ def view_message_board():
 
 @app.route('/rsvp_response')
 def rsvp_response():
-	pass
+	first_name = request.form.get("first")
+	last_name = request.form.get("last")
+	rsvp? = request.form.get("rsvp")
+	phone_number = request.form.get("phone")
+	email = request.form.get("email")
+	other_guests = request.form.get("others")
+
+	print first_name
+	print last_name
+	print rsvp?
+	print phone_number
+	print email
+	print other_guests
+
+
+
+
 
 if __name__ == '__main__':
 	app.run()
