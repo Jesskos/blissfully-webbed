@@ -1,4 +1,9 @@
 // rsvp 
+
+function rsvpRequestReceived(result) {
+	alert(result)
+}
+
 function submitRSVP(evt) {
 	evt.preventDefault();
 	console.log(evt)
@@ -13,11 +18,12 @@ function submitRSVP(evt) {
 		"others": otherRsvps
 	}
 
-	let otherRsvps = $('#other-rsvps').find(":selected").text();
 
-	.post("/rsvp_response",
+	console.log(guestInfo)
+
+	$.post("/rsvp_response",
 		guestInfo, 
-		confirmation);
+		rsvpRequestReceived);
 }
 
 	

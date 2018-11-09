@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request, flash, session, jsonify
 
 app = Flask(__name__)
 
@@ -43,7 +43,7 @@ def rsvp():
 def view_message_board():
 	return render_template("messageboard.html")
 
-@app.route('/rsvp_response', methods=["POST")
+@app.route('/rsvp_response', methods=["POST"])
 def rsvp_response():
 	first_name = request.form.get("first")
 	last_name = request.form.get("last")
