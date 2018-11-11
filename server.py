@@ -67,4 +67,5 @@ def rsvp_response():
 
 if __name__ == '__main__':
 	app.run()
+	connect_to_db(app)
 
