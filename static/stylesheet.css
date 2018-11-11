@@ -9,13 +9,6 @@
   background-color: #464646;
 }
 
-.rsvp-bg{
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #ADD8E6;
-}
 
 
 /*
@@ -82,12 +75,32 @@ li.dropdown {
     display: block;
 }
 
-.signup {
-    float: right;
+
+
+
+/*navbar */
+.item-main {
+    flex-grow: 0;
 }
 
-/*
-containers */
+.nav-item {
+    flex-grow: 1;
+    font-size: 20px;
+    font-family: 'Bentham', serif;
+}
+
+.sub-item {
+    font-size: 18px;
+    font-family: 'Bentham', serif;
+}
+
+
+
+.title-seashell {
+    height: 50px;
+    width: auto;
+}
+
 
 .container {
   display: flex; 
@@ -96,11 +109,7 @@ containers */
   background-color: white;
   opacity: 0.6;
   filter: alpha(opacity=60); 
-
-
-
 }
-
 
 .container-left {
     display: flex;
@@ -108,6 +117,7 @@ containers */
     padding-left: 15%;
 }
 
+/*rsvp*/
 .container-rsvp {
   display: flex;
   flex-direction: column; 
@@ -124,61 +134,71 @@ containers */
 
 }
 
-
-
-/*items in containers */
-.item-main {
-    flex-grow: 0;
-}
-
-.nav-item {
-    flex-grow: 1;
-    font-size: 20px;
-    font-family: 'Bentham', serif;
-}
-
-.sub-item {
-    font-size: 18px;
-    font-family: 'Bentham', serif;
-/*    color: #7E1946;*/
+.rsvp-bg{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #ADD8E6;
 }
 
 
 
-.title-seashell {
-    height: 50px;
-    width: auto;
+/*
+modal information */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-show {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
 
-.annoucement {
-    width: 300px;
-    height: 100px;
-    font-family: 'Shadows Into Light', cursive;
-    color: black;
-    margin-left:auto;
-    margin-right:auto;
-  
-}
-
-.days-remaining {
-    margin-top: 150px;
-    margin-left:auto;
-    margin-right:auto;
-    padding-left: 120px;
-
-}
 
 
-.seahorses {
-    width: 150px;
-    height: auto;
-    padding-left: 180px;
-    margin-right: auto;
-    margin-left: auto;
-
-}
 
 
-te
