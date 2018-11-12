@@ -1,6 +1,9 @@
 Click==7.0
 Flask==1.0.2
-itsdangerous==0.24
+Flask-SQLAlchemy==2.3.2
+itsdangerous==1.1.0
 Jinja2==2.10
-MarkupSafe==1.0
+MarkupSafe==1.1.0
+psycopg2==2.7.6
+SQLAlchemy==1.2.14
 Werkzeug==0.14.1

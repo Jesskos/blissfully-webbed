@@ -1,6 +1,9 @@
 from flask import Flask, render_template, redirect, request, flash, session, jsonify
+from model import connect_to_db,db, RSVP
 
 app = Flask(__name__)
+
+app.secret_key="Apple"
 
 @app.route('/login')
 def log_in():
@@ -12,7 +15,7 @@ def sign_up():
 
 @app.route('/')
 def welcome():
-    return render_template("welcome.html")
+    return render_template("welcome.html")	
 
 @app.route('/details')
 def get_details():
@@ -45,27 +48,36 @@ def view_message_board():
 
 @app.route('/rsvp_response', methods=["POST"])
 def rsvp_response():
-	first_name = request.form.get("first")
-	last_name = request.form.get("last")
+	first_name = request.form.get("first").lower()
+	last_name = request.form.get("last").lower()
 	rsvp_response = request.form.get("rsvp")
 	phone_number = request.form.get("phone")
-	email = request.form.get("email")
+	email = request.form.get("email").lower()
 	other_guests = request.form.get("others")
 
-	print first_name
-	print last_name
-	print rsvp_response
-	print phone_number
-	print email
-	print other_guests
+	attending = (str(rsvp_response) == "yes")
+	print "{} {} {} {} {} {} {}".format(first_name, last_name, rsvp_response, phone_number, email, other_guests, attending)
 
-	return "added!"
+	#check to make sure user has not already RSVPed
+	user_already_in_db = RSVP.query.filter(RSVP.user_first_name==first_name, RSVP.user_last_name==last_name).first()
+	print user_already_in_db
 
+	if user_already_in_db:
+		return "You have already RSVPed! Can't wait to see you!"
 
-
+	else:
+		new_guest = RSVP(user_first_name=first_name,
+			user_last_name=last_name,
+			attending=attending, 
+			user_phone=phone_number, 
+			user_email=email)
+		db.session.add(new_guest)
+		db.session.commit()
+		return "We have your RSVP! Cant's wait to see you"
 
 
 if __name__ == '__main__':
-	app.run()
 	connect_to_db(app)
+	app.run()
+	
 

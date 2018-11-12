@@ -38,17 +38,9 @@ function closeModal(evt) {
 }
 
 function generateRsvp(otherRsvps) {
-	let modalContent = document.getElementById('model-content');
-	let newForm = '<form action="/rsvp_response" class="rsvp-form" method="post">
-	First Name: <input type="text" name="fname" id="first-name" required> 
-  	Last Name: <input type="text" name="lname" id="last-name" required>
-    Attending? 
-    <input type="radio" name="rsvp" value="yes"> Yes
-    <input type="radio" name="rsvp" value="no"> No 
-     Phone number? <input type="text" name="phone" placeholder="optional"> 
-     What is your email address? <input type="text" name="email" placeholder="optional"> <br>
-     </form>'
-     modalContent.innerHTML = newForm
+	let formContent = document.getElementById('form-content');
+	console.log(formContent)
+
 }
 	
 $("#rsvp-button").on("click", submitRSVP)
