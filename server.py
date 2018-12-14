@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, flash, session, jsonify
 from model import connect_to_db,db, RSVP
+from jinja2 import StrictUndefined
 
 app = Flask(__name__)
 
@@ -48,6 +49,7 @@ def view_message_board():
 
 @app.route('/rsvp_response', methods=["POST"])
 def rsvp_response():
+	print("request.form is {}".format(request.form))
 	first_name = request.form.get("first").lower()
 	last_name = request.form.get("last").lower()
 	rsvp_response = request.form.get("rsvp")
@@ -55,29 +57,35 @@ def rsvp_response():
 	email = request.form.get("email").lower()
 	other_guests = request.form.get("others")
 
-	attending = (str(rsvp_response) == "yes")
-	print "{} {} {} {} {} {} {}".format(first_name, last_name, rsvp_response, phone_number, email, other_guests, attending)
+	is_attending = (str(rsvp_response) == "yes")
+	print(is_attending)
+	print("{} {} {} {} {} {} {}".format(first_name, last_name, rsvp_response, phone_number, email, other_guests, is_attending))
 
 	#check to make sure user has not already RSVPed
-	user_already_in_db = RSVP.query.filter(RSVP.user_first_name==first_name, RSVP.user_last_name==last_name).first()
-	print user_already_in_db
+	existing_rsvp = RSVP.query.filter(RSVP.guest_first_name==first_name, RSVP.guest_last_name==last_name).first()
+	print(existing_rsvp)
 
-	if user_already_in_db:
-		return "You have already RSVPed! Can't wait to see you!"
+	if existing_rsvp:
+		return jsonify({"response": "You have already RSVPed! Can't wait to see you!"})
 
 	else:
-		new_guest = RSVP(user_first_name=first_name,
-			user_last_name=last_name,
-			attending=attending, 
-			user_phone=phone_number, 
-			user_email=email)
+		new_guest = RSVP(guest_first_name=first_name,
+			guest_last_name=last_name,
+			is_attending=is_attending, 
+			guest_phone=phone_number, 
+			guest_email=email)
 		db.session.add(new_guest)
 		db.session.commit()
-		return "We have your RSVP! Cant's wait to see you"
+
+	if is_attending:
+		return jsonify({"response": "We have your RSVP! Cant's wait to see you"})
+		
+	return jsonify({"We will miss you!"})
+
 
 
 if __name__ == '__main__':
 	connect_to_db(app)
-	app.run()
+	app.run(debug=True)
 	
 
