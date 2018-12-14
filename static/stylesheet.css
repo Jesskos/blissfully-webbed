@@ -102,13 +102,14 @@ li.dropdown {
 }
 
 
-.container {
+.navbar {
   display: flex; 
   align-items: stretch;
   justify-content: center;
   background-color: white;
   opacity: 0.6;
   filter: alpha(opacity=60); 
+  width: 100%;
 }
 
 .container-left {
@@ -123,9 +124,9 @@ li.dropdown {
   flex-direction: column; 
   align-items: stretch;
   justify-content: center;
+  margin: auto;
 
 }
-
 
 .buttons {
     display: flex; 
@@ -141,7 +142,6 @@ li.dropdown {
   background-size: cover;
   background-color: #ADD8E6;
 }
-
 
 
 /*

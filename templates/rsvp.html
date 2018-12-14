@@ -8,17 +8,17 @@
 <body class="rsvp-bg">  
   </body>
  
-<div class="container-rsvp">
+<div class="container-rsvp container-fluid">
   <h3> Let us know if you can make it. We hope to "sea" you!</h3>
-  <form action="/rsvp_response" class="rsvp-form" method="post">
-  	First Name: <input type="text" name="fname" id="first-name"><br>
-  	Last Name: <input type="text" name="lname" id="last-name"><br>
+  <form action="/rsvp_response" class="rsvp-form" id="submit-rsvp" method="post">
+  	First Name: <input type="text" name="fname" id="first-name" required><br>
+  	Last Name: <input type="text" name="lname" id="last-name" required><br>
     Are you attending? 
-    <input type="radio" name="rsvp" value="yes"> Yes
-    <input type="radio" name="rsvp" value="no"> No <br>
+    <input type="radio" name="rsvp" value="yes" required> Yes
+    <input type="radio" name="rsvp" value="no" required> No <br>
      What is your phone number? <input type="text" name="phone" placeholder="optional"> <br>
      What is your email address? <input type="text" name="email" placeholder="optional"> <br>
-     How many others (not including yourself) are you rsvping for? 
+     How many others (not including yourself) are you rsvping for? You will be prompted to enter their information in the following section. 
      <select id="other-rsvps">
       <option value="0">0</option>
   		<option value="1">1</option>
@@ -33,23 +33,15 @@
   		<option value="10">10</option> 
 	  </select>
 	  <br>
-    <button type="button" id="rsvp-button">Click Me!</button>
+     <input type="submit" value="RSVP">
   </form>
 
 
 <div id="rsvp-modal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <form id="form-content"></form>
-  </div>
-
-</div>
 
 
 
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/static/index.js"></script>
+
 {% endblock %}     
