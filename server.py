@@ -49,7 +49,10 @@ def view_message_board():
 
 @app.route('/rsvp_response', methods=["POST"])
 def rsvp_response():
-	print("request.form is {}".format(request.form))
+
+	#an empty dictionary to be sent out as JSON response to server
+	response = {}
+
 	first_name = request.form.get("first").lower()
 	last_name = request.form.get("last").lower()
 	rsvp_response = request.form.get("rsvp")
@@ -58,15 +61,14 @@ def rsvp_response():
 	other_guests = request.form.get("others")
 
 	is_attending = (str(rsvp_response) == "yes")
-	print(is_attending)
-	print("{} {} {} {} {} {} {}".format(first_name, last_name, rsvp_response, phone_number, email, other_guests, is_attending))
 
 	#check to make sure user has not already RSVPed
 	existing_rsvp = RSVP.query.filter(RSVP.guest_first_name==first_name, RSVP.guest_last_name==last_name).first()
-	print(existing_rsvp)
 
+	response["num_guests"] = other_guests
 	if existing_rsvp:
-		return jsonify({"response": "You have already RSVPed! Can't wait to see you!"})
+		response["message"] = "You have already RSVPed! Can't wait to see you!"
+		return jsonify(response)
 
 	else:
 		new_guest = RSVP(guest_first_name=first_name,
@@ -78,9 +80,13 @@ def rsvp_response():
 		db.session.commit()
 
 	if is_attending:
-		return jsonify({"response": "We have your RSVP! Cant's wait to see you"})
-		
-	return jsonify({"We will miss you!"})
+		response["message"] = "We have your RSVP! Cant's wait to see you"
+
+	else:
+		response["message"] = "We will miss you!"
+
+	return jsonify(response)
+
 
 
 
