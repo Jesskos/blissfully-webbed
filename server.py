@@ -50,43 +50,49 @@ def view_message_board():
 @app.route('/rsvp_response', methods=["POST"])
 def rsvp_response():
 
-	#an empty dictionary to be sent out as JSON response to server
-	response = {}
-
+	print(request)
+	# gets information from the form 
 	first_name = request.form.get("first").lower()
 	last_name = request.form.get("last").lower()
 	rsvp_response = request.form.get("rsvp")
 	phone_number = request.form.get("phone")
 	email = request.form.get("email").lower()
-	other_guests = request.form.get("others")
 
 	is_attending = (str(rsvp_response) == "yes")
+	print("is_attending is {}".format(is_attending))
+
+
+	#an empty dictionary to be sent out as JSON response to server
+	response = {}
 
 	#check to make sure user has not already RSVPed
 	existing_rsvp = RSVP.query.filter(RSVP.guest_first_name==first_name, RSVP.guest_last_name==last_name).first()
 
-	response["num_guests"] = other_guests
+	# checks if the guest already RSVPed, and if so, lets them know, adds them to the session, but does not modify db
 	if existing_rsvp:
-		response["message"] = "You have already RSVPed! Can't wait to see you!"
+		print("existing rsvp)")
+		response["message"] = "You have already RSVPed!"
 		return jsonify(response)
 
+	# if the rsvp does not exist, creates a new one and adds it to the database
 	else:
-		new_guest = RSVP(guest_first_name=first_name,
+		new_rsvp = RSVP(guest_first_name=first_name,
 			guest_last_name=last_name,
 			is_attending=is_attending, 
 			guest_phone=phone_number, 
 			guest_email=email)
-		db.session.add(new_guest)
+		db.session.add(new_rsvp)
 		db.session.commit()
+		
+		print(is_attending)
 
-	if is_attending:
-		response["message"] = "We have your RSVP! Cant's wait to see you"
-
-	else:
-		response["message"] = "We will miss you!"
-
-	return jsonify(response)
-
+		if is_attending:
+			response["message"] = "Your RSVP is now recorded. We look forward to seeing you"
+		else:
+			response["message"] = "Your RSVP is now recorded. Sorry you can't attend. We'll miss you"
+		return jsonify(response)
+		
+	
 
 
 
