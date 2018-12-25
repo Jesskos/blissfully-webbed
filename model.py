@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 
@@ -24,14 +25,14 @@ class RSVP(db.Model):
 	is_attending= db.Column(db.Boolean, nullable=False)
 
 	def __repr__(self):
-		return "<RSVP rsvp_id={} user_first_name={} user_last_name={} user_email={} user_phone={} attending={}>".format(self.rsvp_id, 
-			self.guest_first_name, self.guest_last_name, self.guest_email, self.guest_phone, self.is_attending) 
+		return "<RSVP rsvp_id={} user_first_name={} user_last_name={} user_email={} user_phone={} attending={} guest_other_guests ={}>".format(self.rsvp_id, 
+			self.guest_first_name, self.guest_last_name, self.guest_email, self.guest_phone, self.is_attending, self.guest_other_guests) 
 
 def connect_to_db(app, uri='postgresql:///blissful_db'): # pragma: no cover
 	""" Connect the database to our Flask App"""
 
 	# Configure to use our PstgreSQL database
-	app.config['SQLALCHEMY_DATABASE_URI'] = uri  
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")  
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  			
 	db.app = app
 	db.init_app(app)

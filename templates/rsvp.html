@@ -10,41 +10,37 @@
  
 <div class="container-rsvp container-fluid" id="rsvp-space">
   <div>
-    <h3 id=".self-or-guest"> Plese RSVP </h3>
+    <h3 id=".self-or-guest"> Plese email jesskos@gmail.com to RSVP or if you have any questions </h3>
+
 
     <form action="/rsvp_response" class="rsvp-form" id="submit-rsvp" method="post">
-    	First Name: <input type="text" name="fname" id="first-name" required><br>
-    	Last Name: <input type="text" name="lname" id="last-name" required><br>
-      Email address: <input type="text" name="email" placeholder="optional"> <br>
-      Phone number <input type="text" name="phone" placeholder="optional"> <br>
-      Do you want to receive wedding updates on your phone? 
-      <input type="radio" name="update" value="yes" required> Yes
-      <input type="radio" name="update" value="no" required> No <br>
-      <br>
-      Are you attending? 
-      <input type="radio" name="rsvp" value="yes" required> Yes
-      <input type="radio" name="rsvp" value="no" required> No <br>
-      <br>
-      <div id="other-rsvps-space">
-        How many others (not including yourself) are you rsvping for? <br>
-        You will be prompted to enter their information in the following section. 
-         <select id="other-rsvps">
-          <option value="0">0</option>
-      		<option value="1">1</option>
-      		<option value="2">2</option>
-      		<option value="3">3</option>
-      		<option value="4">4</option> 
-      		<option value="5">5</option> 
-      		<option value="6">6</option>
-      		<option value="7">7</option>  
-      		<option value="8">8</option> 
-      		<option value="9">9</option> 
-      		<option value="10">10</option> 
-    	  </select> <br>
-    </div>
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Phone Updates?</th>
+          <th>Email Updates?</th>
+          <th>RSVP</th>
+        </tr>
+        <tr id="rsvp">
+        	<td><input type="text" name="fname" id="first-name" required></td>
+        	<td><input type="text" name="lname" id="last-name" required></td>
+          <td><input type="text" name="email" placeholder="optional"></td>
+          <td><input type="text" name="phone" placeholder="optional"></td>
+          <td><input type="radio" name="update" value="yes" required> Yes
+          <input type="radio" name="update" value="no" required> No</td>
+          <td><input type="radio" name="e-update" value="yes" required> Yes
+          <input type="radio" name="e-update" value="no" required> No</td>
+          <td><input type="radio" name="rsvp" value="yes" required> Yes
+          <input type="radio" name="rsvp" value="no" required> No <br></td>
+        </tr>
+    </table>
 
        <input type="submit" value="RSVP">
     </form>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
