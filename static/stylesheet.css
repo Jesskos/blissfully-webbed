@@ -9,8 +9,6 @@
   background-color: #464646;
 }
 
-
-
 /*
 navbar CSS*/
 
@@ -76,8 +74,6 @@ li.dropdown {
 }
 
 
-
-
 /*navbar */
 .item-main {
     flex-grow: 0;
@@ -93,8 +89,6 @@ li.dropdown {
     font-size: 18px;
     font-family: 'Bentham', serif;
 }
-
-
 
 .title-seashell {
     height: 50px;
