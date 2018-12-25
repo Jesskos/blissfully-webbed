@@ -1,7 +1,7 @@
 /*body */
 
 .welcome-bg {
-  background-image: url('static/images/monkey.jpg');
+  background-image: url('images/monkey.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
