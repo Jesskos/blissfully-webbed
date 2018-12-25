@@ -17,14 +17,12 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
 }
 
 li {
     float: left;
     color: black;
-    font-size: 36px;
-    
+    font-size: 36px; 
 }
 
 h1 {
@@ -104,6 +102,7 @@ li.dropdown {
   background-color: white;
   opacity: 0.6;
   filter: alpha(opacity=60); 
+  height: 10%;
   width: 100%;
 }
 
@@ -127,7 +126,6 @@ li.dropdown {
     display: flex; 
     justify-content: center;
     margin-top: 40px;
-
 }
 
 .rsvp-bg{
