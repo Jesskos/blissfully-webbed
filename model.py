@@ -32,7 +32,7 @@ def connect_to_db(app, uri='postgresql:///blissful_db'): # pragma: no cover
 	""" Connect the database to our Flask App"""
 
 	# Configure to use our PstgreSQL database
-	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")  
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",uri)  
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  			
 	db.app = app
 	db.init_app(app)
