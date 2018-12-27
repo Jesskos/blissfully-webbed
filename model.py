@@ -38,18 +38,16 @@ class RSVP(db.Model):
 def connect_to_db(app, uri='postgresql:///blissful_db'): # pragma: no cover
 	""" Connect the database to our Flask App"""
 
-	# Configure to use our PstgreSQL database
-	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",uri)  
-	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  			
+	# Configure to use our PstgreSQL database			
 	db.app = app
 	db.init_app(app)
 	db.create_all()
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-# 	from server import app  # pragma: no cover
-# 	connect_to_db(app)  # pragma: no cover
-# 	print("Connected to DB.") # pragma: no cover
+	from server import app  # pragma: no cover
+	connect_to_db(app)  # pragma: no cover
+	print("Connected to DB.") # pragma: no cover
 
 
 ###########################################################################################################
