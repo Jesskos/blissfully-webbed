@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, flash, session, jsonify
-from model import connect_to_db,db, RSVP
+from model import connect_to_db,db, RSVP, GuestEmail
 from jinja2 import StrictUndefined
+import re
 
 app = Flask(__name__)
 
@@ -92,16 +93,31 @@ def rsvp_response():
 			response["message"] = "Your RSVP is now recorded. Sorry you can't attend. We'll miss you"
 		return jsonify(response)
 
-@app.route('/get_email')
-def get_email():
-	
+@app.route('/submit_email', methods=["POST"])
+def submit_email():
+
+	response = {}
 	guest_email = request.form.get("email")
-	new_email = GuestEmail(email=guest_email)
-	db.session.add(new_email)
-	db.session.commit()
+	if is_valid_email(guest_email):
+		new_email = GuestEmail(email=guest_email)
+		db.session.add(new_email)
+		db.session.commit()
+		response["message"] = "Thank you! We will notify you when the website is ready."
+
+	else:
+		response["message"] = "Please enter a valid email address"
+	return jsonify(response)
 
 		
-	
+
+
+############################################################################################################
+
+def is_valid_email(email):
+	if len(email) > 7 and re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email) != None:
+		return True 
+	return False
+
 
 
 

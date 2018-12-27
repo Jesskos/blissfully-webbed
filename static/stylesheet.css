@@ -29,6 +29,14 @@
   filter: alpha(opacity=60); 
 
 }
+
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  position: absolute;
+}
 /*
 navbar CSS*/
 
