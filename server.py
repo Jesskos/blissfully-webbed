@@ -91,6 +91,15 @@ def rsvp_response():
 		else:
 			response["message"] = "Your RSVP is now recorded. Sorry you can't attend. We'll miss you"
 		return jsonify(response)
+
+@app.route('/get_email')
+def get_email():
+	
+	guest_email = request.form.get("email")
+	new_email = GuestEmail(email=guest_email)
+	db.session.add(new_email)
+	db.session.commit()
+
 		
 	
 
