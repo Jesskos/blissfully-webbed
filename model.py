@@ -45,11 +45,11 @@ def connect_to_db(app, uri='postgresql:///blissful_db'): # pragma: no cover
 	db.init_app(app)
 	db.create_all()
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-	from server import app  # pragma: no cover
-	connect_to_db(app)  # pragma: no cover
-	print("Connected to DB.") # pragma: no cover
+# 	from server import app  # pragma: no cover
+# 	connect_to_db(app)  # pragma: no cover
+# 	print("Connected to DB.") # pragma: no cover
 
 
 ###########################################################################################################
