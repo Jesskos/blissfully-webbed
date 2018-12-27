@@ -4,7 +4,6 @@ from jinja2 import StrictUndefined
 import re
 
 app = Flask(__name__)
-
 app.secret_key="Apple"
 
 @app.route('/login')
@@ -123,6 +122,7 @@ def is_valid_email(email):
 
 
 if __name__ == '__main__':
+	"***** Starting Server *****"
 	connect_to_db(app)
 	app.run(debug=True)
 	
