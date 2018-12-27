@@ -123,8 +123,6 @@ def is_valid_email(email):
 
 
 if __name__ == '__main__':
-	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",uri)  
-	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 	connect_to_db(app)
 	app.run(debug=True)
 	

@@ -4,10 +4,9 @@ from flask_migrate import Migrate, MigrateCommand
 from server import app
 from model import db, connect_to_db
 
-migrate = Migrate(app, db)
-
-manager = Manager(app)
 connect_to_db(app)
+migrate = Migrate(app, db)
+manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 
