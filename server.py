@@ -98,7 +98,7 @@ def submit_email():
 
 	response = {}
 	guest_email = request.form.get("email")
-	print 'Submitting email {} '.format(guest_email)
+	print "Submitting email {} ".format(guest_email)
 	if is_valid_email(guest_email):
 		new_email = GuestEmail(email=guest_email)
 		db.session.add(new_email)
