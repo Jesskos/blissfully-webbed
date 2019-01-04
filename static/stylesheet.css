@@ -168,6 +168,33 @@ li.dropdown {
 
 }
 
+/*details*/
+.container-detials{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+}
+
+.container-event-horizontal {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  width: 20%;
+
+}
+
+.container-event-vertical {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+}
+
 .buttons {
     display: flex; 
     justify-content: center;
@@ -192,6 +219,31 @@ input[type=text] {
 
 }
 
+/* 
+rsvp */
+
+#rsvp-container {
+  display:flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+
+}
+
+#rsvp-image {
+  background-image: url('images/whale.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+
+}
+
+#rsvp-form {
+
+}
 /*
 modal information */
 .modal {

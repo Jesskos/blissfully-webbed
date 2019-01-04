@@ -4,7 +4,7 @@ from jinja2 import StrictUndefined
 import re
 
 app = Flask(__name__)
-
+connect_to_db(app)
 app.secret_key="Apple"
 
 @app.route('/login')
@@ -98,6 +98,8 @@ def submit_email():
 
 	response = {}
 	guest_email = request.form.get("email")
+	print "Submitting email {}".format(guest_email)
+
 	if is_valid_email(guest_email):
 		new_email = GuestEmail(email=guest_email)
 		db.session.add(new_email)
@@ -122,7 +124,7 @@ def is_valid_email(email):
 
 
 if __name__ == '__main__':
-	connect_to_db(app)
+	"***** Starting Server *****"
 	app.run(debug=True)
 	
 
