@@ -1,7 +1,28 @@
-<head>
-	<title>details</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Welcome {% endblock %} 
+
+{% block content %}
+
+	<div class="container-detials">
+		<div><h3>_______________Friday, July 26th_______________ </h3></div>
+			<div class="container-event-horizontal">
+			 <h4>Rehearsal Dinner:</h4>
+			 <h4>8 pm</h4>
+			 <img src="static/images/dish.png">
+			</div>
+		<div><h3>_______________Saturday, July 27th_______________ </h3></div>
+			<div class="container-event-horizontal">
+				<div class="container-event-vertical">
+					<h5>6:00 PM</h5>
+					<h5>Ceremony</h5>
+					<h5>begins</h5>
+				</div>
+			</div>
+		<div><h3>_______________Sunday, July 28th_______________ </h3></div>
+	</div>
+ 
+{% endblock %}     
+
+
